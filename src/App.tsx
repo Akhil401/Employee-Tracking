@@ -4,7 +4,7 @@ import Employee from './components/Employee'
 
 
 
-const App = () => {
+const App: React.FC = () => {
 
   return (
 

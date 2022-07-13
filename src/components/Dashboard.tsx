@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronDown } from "lucide-react";
 import './dashborad.css'
-
-import { BarChart, Bar, CartesianGrid, XAxis, YAxis } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis } from 'recharts'
 
 
 

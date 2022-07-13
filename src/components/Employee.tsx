@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext, useDebugValue, useRef } from 'react';
+import React, { useState } from 'react';
 import './employee.css';
 import { ArrowRightCircle, ArrowLeftCircle } from 'lucide-react';
 import { ChevronDown } from "lucide-react";
@@ -21,38 +21,38 @@ const App: React.FC = () => {
 
     let employeesDetails: Employee[] = [
         {
-            nome: "Akhil 1", cognome: "Rondla", marticulation: 21, transfer: 0
+            nome: "Akhil", cognome: "Rondla", marticulation: 21, transfer: 0
         },
         {
-            nome: "Akhil 2", cognome: "Rondla", marticulation: 22, transfer: 0
+            nome: "Andrea", cognome: "Galm", marticulation: 22, transfer: 0
         },
         {
-            nome: "Akhil 3", cognome: "Rondla", marticulation: 23, transfer: 0
+            nome: "Tony", cognome: "Stark", marticulation: 23, transfer: 0
         },
         {
-            nome: "Akhil 4", cognome: "Rondla", marticulation: 24, transfer: 0
+            nome: " Iron", cognome: "Man", marticulation: 24, transfer: 0
         },
         {
-            nome: "Akhil 5", cognome: "Rondla", marticulation: 25, transfer: 0
+            nome: "Mr.", cognome: "Robot", marticulation: 25, transfer: 0
         },
     ]
 
     let employeesDetails1: Employee[] =
         [
             {
-                nome: "Akhil 6", cognome: "Rondla", marticulation: 11, transfer: 0
+                nome: "Allesandro", cognome: "Alle", marticulation: 11, transfer: 0
             },
             {
-                nome: "Akhil 7", cognome: "Rondla", marticulation: 12, transfer: 0
+                nome: "Bassimo", cognome: "Bella", marticulation: 12, transfer: 0
             },
             {
-                nome: "Akhil 8", cognome: "Rondla", marticulation: 13, transfer: 0
+                nome: "Thor", cognome: "Avengers", marticulation: 13, transfer: 0
             },
             {
-                nome: "Akhil 9", cognome: "Rondla", marticulation: 14, transfer: 0
+                nome: "Spider", cognome: "Man", marticulation: 14, transfer: 0
             },
             {
-                nome: "Akhil 10", cognome: "Rondla", marticulation: 15, transfer: 0
+                nome: "Harry ", cognome: "Potter", marticulation: 15, transfer: 0
             },
         ]
 
@@ -65,7 +65,7 @@ const App: React.FC = () => {
     const [disableleft, setdisableLeft] = useState<Boolean>(false)
     const [count, setCount] = useState<number>(0);
     const [click, setClick] = useState(false);
-    const [active, setActive] = useState(false)
+
 
 
     const handleRightClick = () => {
@@ -166,7 +166,7 @@ const App: React.FC = () => {
                                 {list1.map((data, i) => {
                                     return (
 
-                                        <div className={active ? "active__value" : "values"} key={i}
+                                        <div className="values" key={i}
                                             onClick={() => handleTrackLeft(i)} >
 
                                             <span >{data.nome} </span>
@@ -203,7 +203,7 @@ const App: React.FC = () => {
                                 {list2.map((value, i) => {
                                     return (
 
-                                        <div className={active ? "active__value" : "values"} key={i}
+                                        <div className="values" key={i}
                                             onClick={() => handleTrackRight(i)}>
 
                                             <span>{value.nome} </span>
