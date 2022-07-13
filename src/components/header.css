@@ -1,0 +1,23 @@
+nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  background-color: aqua;
+  position: sticky;
+  top: 0;
+  align-items: center;
+}
+.header {
+  font-size: 1.5em;
+}
+
+.list {
+  font-size: 1.2em;
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+.list > span:hover {
+  color: white;
+}

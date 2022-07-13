@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(116, 112, 112);
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+  align-items: center;
+  flex-flow: column-wrap;
+  margin-bottom: 3em;
+}
+.employee__details {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.employee__head {
+  width: 100%;
+  height: 50px;
+  margin-top: -80px;
+  background-color: #08fdd8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.employee__site {
+  display: flex;
+  gap: 5em;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.employee__leftsite {
+  display: grid;
+  color: white;
+  border-radius: 10px;
+  width: 350px;
+  height: 580px;
+  align-items: stretch;
+  background-color: #409ea5;
+}
+.employee__rightsite {
+  display: grid;
+  color: white;
+  border-radius: 10px;
+  width: 350px;
+  height: 580px;
+  align-items: stretch;
+  background-color: #409ea5;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: white;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 13px 13px;
+  text-align: left;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+.body {
+  margin-bottom: 15em;
+}
+.values {
+  color: white;
+  cursor: pointer;
+  margin-top: 3px;
+  display: grid;
+  text-align: left;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 1em 13px;
+  align-items: center;
+  text-justify: center;
+  text-decoration: none;
+}
+.values > .active {
+  display: none;
+}
+
+.active__value:focus > .active {
+  display: block;
+}
+
+.values:hover > .active {
+  display: block;
+}
+h1 {
+  display: flex;
+  color: white;
+}
+h1 > p {
+  color: rgb(168, 241, 21);
+}
+
+.values:nth-child(odd) {
+  color: black;
+  border-radius: 5px;
+  background-color: yellowgreen;
+  transition: 0.5s ease-in-out;
+}
+
+.values:nth-child(odd):hover {
+  transform: scale(1.03);
+}
+.values:nth-child(even) {
+  background-color: #409ea5;
+
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.values:nth-child(even):hover {
+  border: 1px solid white;
+  transform: scale(1.03);
+}
