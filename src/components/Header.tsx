@@ -7,10 +7,7 @@ const Header = () => {
             <div className='header'>
                 enGenome-Task
             </div>
-            <div className='list'>
-                <span>Dashboard</span>
-                <span>Employees</span>
-            </div>
+
         </nav>
     )
 }

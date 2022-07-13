@@ -27,7 +27,7 @@ const Dashboard = (list1: any) => {
         }, {
             name: "Site2", value: b
         }, {
-            name: "Number of Transfers", value: number
+            name: "No.of Transfers", value: number
         }
 
     ]

@@ -2,22 +2,14 @@ nav {
   height: 70px;
   display: flex;
   justify-content: space-around;
-  background-color: aqua;
+  background-color: black;
   position: sticky;
   top: 0;
   align-items: center;
 }
 .header {
-  font-size: 1.5em;
-}
-
-.list {
-  font-size: 1.2em;
-  display: flex;
-  gap: 30px;
-  cursor: pointer;
+  color: #fff;
+  font-size: 1.8em;
   letter-spacing: 2px;
-}
-.list > span:hover {
-  color: white;
+  font-weight: 500;
 }
