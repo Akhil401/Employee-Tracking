@@ -59,12 +59,13 @@ const App: React.FC = () => {
 
     const [list1, setList1] = useState(employeesDetails);
     const [list2, setList2] = useState(employeesDetails1);
-    const [targetright, setTargetRight] = useState(0)
-    const [targetleft, setTargetLeft] = useState(0);
+    const [targetright, setTargetRight] = useState(-1)
+    const [targetleft, setTargetLeft] = useState(-1);
     const [disableright, setdisableRight] = useState<Boolean>(false)
     const [disableleft, setdisableLeft] = useState<Boolean>(false)
     const [count, setCount] = useState<number>(0);
     const [click, setClick] = useState(false);
+    const [active, setActive] = useState("values")
 
 
 
@@ -109,6 +110,7 @@ const App: React.FC = () => {
 
 
     const handleTrackRight = (i: number) => {
+        setActive("values__active")
         let x = i;
         console.log(x)
         setdisableRight(true)
@@ -123,6 +125,7 @@ const App: React.FC = () => {
 
     }
     const handleTrackLeft = (i: number) => {
+
         let x = i;
         setdisableLeft(true)
         let Z: Employee = list1[x]
@@ -149,10 +152,7 @@ const App: React.FC = () => {
                 <>
                     <h1>Total number of transfers =  <p>&nbsp;&nbsp;{count}</p></h1>
 
-                    <div className='employee__site'
-
-                    >
-
+                    <div className='employee__site'>
 
                         <div className='employee__leftsite'>
 
@@ -166,15 +166,16 @@ const App: React.FC = () => {
                                 {list1.map((data, i) => {
                                     return (
 
-                                        <div className="values" key={i}
-                                            onClick={() => handleTrackLeft(i)} >
+                                        <div className={i == targetright ? "active__value" : "values"} key={i}
+                                            onClick={() => handleTrackLeft(i)}
+                                        >
 
                                             <span >{data.nome} </span>
                                             <span>{data.cognome} </span>
-                                            <label className='active'>Marticulation No.</label>
-                                            <span className='active'>{data.marticulation} </span>
-                                            <label className='active'>No.of transfers</label>
-                                            <span className='active'>{data.transfer}</span>
+                                            <label className='active '>Marticulation No.</label>
+                                            <span className='active  '>{data.marticulation} </span>
+                                            <label className='active '>No.of transfers</label>
+                                            <span className='active '>{data.transfer}</span>
 
                                         </div>
                                     )
@@ -199,19 +200,19 @@ const App: React.FC = () => {
                             </div>
 
 
-                            <div className="body"  >
+                            <div className="body" >
                                 {list2.map((value, i) => {
                                     return (
 
-                                        <div className="values" key={i}
-                                            onClick={() => handleTrackRight(i)}>
+                                        <div className={i == targetleft ? "active__value" : "values"} key={i}
+                                            onClick={() => handleTrackRight(i)} >
 
                                             <span>{value.nome} </span>
                                             <span>{value.cognome} </span>
-                                            <span className='active'>Marticulation No.</span>
-                                            <span className='active'>{value.marticulation} </span>
-                                            <span className='active'>No.of transfers</span>
-                                            <span className='active'>{value.transfer}</span>
+                                            <span className='active '>Marticulation No.</span>
+                                            <span className='active '>{value.marticulation} </span>
+                                            <span className='active '>No.of transfers</span>
+                                            <span className='active '>{value.transfer}</span>
 
                                         </div>
 

@@ -79,7 +79,8 @@ body {
 .body {
   margin-bottom: 15em;
 }
-.values {
+.values,
+.active__value {
   color: white;
   cursor: pointer;
   margin-top: 3px;
@@ -91,26 +92,31 @@ body {
   text-justify: center;
   text-decoration: none;
 }
+
 .values > .active {
   display: none;
-}
-
-.active__value:focus > .active {
-  display: block;
 }
 
 .values:hover > .active {
   display: block;
 }
+
+.values__active > .active {
+  display: block;
+}
+
+.active__value > .active {
+  display: block;
+}
 h1 {
   display: flex;
-  color: white;
 }
 h1 > p {
   color: rgb(168, 241, 21);
 }
 
-.values:nth-child(odd) {
+.values:nth-child(odd),
+.active__value:nth-child(odd) {
   color: black;
   border-radius: 5px;
   background-color: yellowgreen;
@@ -120,9 +126,9 @@ h1 > p {
 .values:nth-child(odd):hover {
   transform: scale(1.03);
 }
-.values:nth-child(even) {
+.values:nth-child(even),
+.active__values:nth-child(even) {
   background-color: #409ea5;
-
   border-radius: 5px;
   transition: 0.5s ease-in-out;
 }

@@ -31,11 +31,6 @@ const Dashboard = (list1: any) => {
 
     ]
 
-    console.log(data)
-
-
-
-
     return (
         <div className='dashboard' onClick={() => setClick(!click)} >
             <div className='dashboard__head'>
