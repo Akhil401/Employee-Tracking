@@ -108,7 +108,7 @@ const App: React.FC = () => {
     }
 
 
-    const handleClickRight = (i: number) => {
+    const handleTrackRight = (i: number) => {
         let x = i;
         console.log(x)
         setdisableRight(true)
@@ -122,7 +122,7 @@ const App: React.FC = () => {
         setTargetLeft(i)
 
     }
-    const handleClickLeft = (i: number) => {
+    const handleTrackLeft = (i: number) => {
         let x = i;
         setdisableLeft(true)
         let Z: Employee = list1[x]
@@ -167,7 +167,7 @@ const App: React.FC = () => {
                                     return (
 
                                         <div className={active ? "active__value" : "values"} key={i}
-                                            onClick={() => handleClickLeft(i)} >
+                                            onClick={() => handleTrackLeft(i)} >
 
                                             <span >{data.nome} </span>
                                             <span>{data.cognome} </span>
@@ -204,7 +204,7 @@ const App: React.FC = () => {
                                     return (
 
                                         <div className={active ? "active__value" : "values"} key={i}
-                                            onClick={() => handleClickRight(i)}>
+                                            onClick={() => handleTrackRight(i)}>
 
                                             <span>{value.nome} </span>
                                             <span>{value.cognome} </span>
