@@ -42,9 +42,9 @@ const Dashboard = (list1: any) => {
                     <div className='barchart'>
 
                         <BarChart width={400} height={400} data={data} >
-                            <Bar dataKey="value" fill="green" />
+                            <Bar dataKey="value" fill="lightblue" />
                             <XAxis dataKey="name" stroke='whitte' />
-                            <YAxis fill='white' />
+                            <YAxis  />
                         </BarChart>
                     </div>
 
