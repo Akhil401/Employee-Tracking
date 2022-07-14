@@ -65,7 +65,7 @@ const App: React.FC = () => {
     const [disableleft, setdisableLeft] = useState<Boolean>(false)
     const [count, setCount] = useState<number>(0);
     const [click, setClick] = useState(false);
-    const [active, setActive] = useState("values")
+
 
 
 
@@ -80,12 +80,13 @@ const App: React.FC = () => {
             let Z: Employee = l1.splice(x, 1)[0]
             let l = list2.slice()
             Z.transfer = Z.transfer + 1;
-            console.log(Z.transfer)
             l.push(Z)
             setList2(l)
             setList1(l1)
             setCount(count + 1)
             setdisableRight(true)
+            setTargetLeft(-1)
+
         }
     }
 
@@ -103,16 +104,16 @@ const App: React.FC = () => {
             setList2(l1)
             setCount(count + 1)
             setdisableLeft(true)
+            setTargetRight(-1)
 
         }
-
     }
 
 
+
     const handleTrackRight = (i: number) => {
-        setActive("values__active")
+
         let x = i;
-        console.log(x)
         setdisableRight(true)
         let Z: Employee = list2[x]
         if (Z.transfer >= 10) {
@@ -144,25 +145,34 @@ const App: React.FC = () => {
         <div className="home" >
 
             <Dashboard list1={list1} list2={list2} count={count} />
-            <div className='employee__head' onClick={() => setClick(!click)} >
+
+            <div className='employee__head'
+                onClick={() => {
+                    setClick(!click)
+
+                }}
+            >
                 <span>Employees Sites</span>
                 <ChevronDown size={35} color="white" />
             </div>
+
             {click ? "" : (
                 <>
                     <h1>Total number of transfers =  <p>&nbsp;&nbsp;{count}</p></h1>
 
                     <div className='employee__site'>
 
-                        <div className='employee__leftsite'>
+                        <div className='employee__leftsite'
+                        >
 
 
-                            <div className='head'>
+                            <div className='head'
+                            >
                                 <span>Nome</span>
                                 <span>Cognome</span>
                             </div>
 
-                            <div className='body' >
+                            <div className='body' onMouseDown={() => setTargetLeft(-1)}>
                                 {list1.map((data, i) => {
                                     return (
 
@@ -194,13 +204,13 @@ const App: React.FC = () => {
                         <div className='employee__rightsite'>
 
 
-                            <div className='head'>
-                                <span>Nome</span>
+                            <div className='head' >
+                                <span >Nome</span>
                                 <span>Cognome</span>
                             </div>
 
 
-                            <div className="body" >
+                            <div className="body" onMouseDown={() => setTargetLeft(-1)}>
                                 {list2.map((value, i) => {
                                     return (
 
