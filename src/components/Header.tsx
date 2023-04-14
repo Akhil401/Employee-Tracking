@@ -5,7 +5,7 @@ const Header = () => {
     return (
         <nav>
             <div className='header'>
-                enGenome-Task
+               Employee Tracking
             </div>
 
         </nav>
